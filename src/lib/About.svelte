@@ -31,6 +31,7 @@
           loading="lazy"
         />
       </div>
+      <p class="about_photographer">PC: <a href="https://www.instagram.com/andres_borella/" target="_blank" rel="noopener noreferrer">@andres_borella</a></p>
     </div>
 
     <div class="about_content">
@@ -132,6 +133,24 @@
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+  }
+
+  .about_photographer {
+    margin: 0.75rem 0.5rem 0.5rem;
+    font-size: 0.55rem;
+    color: var(--color-text-muted);
+    text-align: left;
+    text-transform: lowercase;
+  }
+
+  .about_photographer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .about_photographer a:hover {
+    color: var(--color-text);
   }
 
   .about_kicker {

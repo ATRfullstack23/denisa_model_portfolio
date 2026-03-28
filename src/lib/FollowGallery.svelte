@@ -22,6 +22,9 @@
         <figure class="follow_cell" role="listitem">
           <div class="follow_img_wrap">
             <img src={img.src} alt={img.alt} width="400" height="560" loading="lazy" decoding="async" />
+            <div class="photographer_overlay">
+              <a href="https://www.instagram.com/ivanodp_photo/" target="_blank" rel="noopener noreferrer">@ivanodp_photo</a>
+            </div>
           </div>
         </figure>
       {/each}
@@ -62,7 +65,7 @@
   .follow_handle {
     margin: 0.85rem 0 1.25rem;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: var(--follow-muted);
   }
@@ -130,8 +133,47 @@
     transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
+  .photographer_overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-bottom: 1.2rem;
+    padding-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .photographer_overlay a {
+    color: rgba(255, 255, 255, 0.95);
+    font-family: var(--font-sans);
+    font-size: 0.32rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    pointer-events: auto;
+    transform: translateY(10px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .photographer_overlay a:hover {
+    text-decoration: underline;
+  }
+
   .follow_cell:hover .follow_img_wrap img {
     transform: scale(1.04);
+  }
+
+  .follow_cell:hover .photographer_overlay {
+    opacity: 1;
+  }
+
+  .follow_cell:hover .photographer_overlay a {
+    transform: translateY(0);
   }
 
   @media (min-width: 600px) {

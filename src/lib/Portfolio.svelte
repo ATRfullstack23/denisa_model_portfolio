@@ -14,7 +14,7 @@
     }
   }
 
-  const filter_keys = ['all', 'lifestyle', 'brand_shoots']
+  const filter_keys = ['all', 'collaboration', 'brand_shoots']
 
   /** @type {{ id: string, category: string, title: string, description: string, image: string } | null} */
   let selected_work = null
@@ -87,7 +87,12 @@
             </div>
           </div>
           <div class="card_body">
-            <p class="card_meta">{category_labels[item.category]}</p>
+            <p class="card_meta">
+              {category_labels[item.category]}
+              {#if item.photographer}
+                <span class="card_photographer"> — <a href={`https://www.instagram.com/${item.photographer.replace('@', '')}/`} target="_blank" rel="noopener noreferrer">{item.photographer}</a></span>
+              {/if}
+            </p>
             <h3 class="card_title">{item.title}</h3>
             <p class="card_desc">{item.description}</p>
           </div>
@@ -125,7 +130,12 @@
           />
         </div>
         <div class="work_modal_caption">
-          <p class="work_modal_meta">{category_labels[selected_work.category]}</p>
+          <p class="work_modal_meta">
+            {category_labels[selected_work.category]}
+            {#if selected_work.photographer}
+              <span class="modal_photo_credit"> — <a href={`https://www.instagram.com/${selected_work.photographer.replace('@', '')}/`} target="_blank" rel="noopener noreferrer">{selected_work.photographer}</a></span>
+            {/if}
+          </p>
           <h3 id="work_modal_title" class="work_modal_title">{selected_work.title}</h3>
           <p class="work_modal_desc">{selected_work.description}</p>
         </div>
@@ -306,6 +316,36 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(249, 247, 242, 0.9);
+  }
+  
+  .card_photographer {
+    text-transform: lowercase;
+    font-size: 0.62em;
+  }
+
+  .card_photographer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .card_photographer a:hover {
+    color: var(--color-text);
+  }
+
+  .modal_photo_credit {
+    text-transform: lowercase;
+    font-size: 0.68em;
+  }
+
+  .modal_photo_credit a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .modal_photo_credit a:hover {
+    color: var(--color-text);
   }
 
   .card_cta_btn {

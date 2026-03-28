@@ -168,6 +168,7 @@
     background: none;
     padding: 0.25rem 0.5rem;
     color: inherit;
+    transition: opacity 0.3s ease;
   }
 
   .nav_brand_text {
@@ -227,18 +228,24 @@
   }
 
   @media (max-width: 899px) {
-    .site_nav {
-      background: rgba(10, 10, 10, 0.55);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      color: var(--color-text);
-      box-shadow: 0 1px 0 var(--color-border);
+    .site_nav:not(.nav_light) {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+    }
+
+    .site_nav:not(.nav_light) .nav_brand {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .site_nav.nav_light {
       background: rgba(8, 8, 8, 0.68);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+      color: var(--color-text);
+      box-shadow: 0 1px 0 var(--color-border);
     }
 
     .site_nav:not(.nav_light) .nav_link {

@@ -5,56 +5,61 @@ import bs1_image from '../assets/denisa_img/bs1.jpeg'
 import bs2_image from '../assets/denisa_img/bs2.jpeg'
 import bs3_image from '../assets/denisa_img/bs3.jpeg'
 
-/** @typedef {{ id: string, category: string, title: string, description: string, image: string }} PortfolioItem */
+/** @typedef {{ id: string, category: string, title: string, description: string, image: string, photographer?: string }} PortfolioItem */
 
 /** @type {PortfolioItem[]} */
 export const portfolio_items = [
   {
     id: '1',
-    category: 'lifestyle',
+    category: 'brand_shoots',
     title: 'The New Guard',
     description: 'Redefining minimalism in the digital age — monochrome studio series.',
     image: life2_image,
+    photographer: '@andres_borella',
   },
   {
     id: '2',
-    category: 'brand_shoots',
+    category: 'collaboration',
     title: 'Structural Elegance',
     description: 'Architectural lines and couture silhouettes for SS lookbook.',
     image: bs1_image,
   },
   {
     id: '3',
-    category: 'lifestyle',
+    category: 'brand_shoots',
     title: 'Inner Light',
     description: 'Natural light on location — soft, intimate frames.',
     image: life_image,
+    photographer: '@andres_borella',
   },
   {
     id: '4',
-    category: 'brand_shoots',
+    category: 'collaboration',
     title: 'Campaign Noir',
     description: 'Luxury fragrance campaign — cinematic black and white.',
     image: bs2_image,
+    photographer: '@_antonio_bellan',
   },
   {
     id: '5',
-    category: 'brand_shoots',
+    category: 'collaboration',
     title: 'Runway Adjacent',
     description: 'High-contrast studio portraits for emerging designer label.',
     image: bs3_image,
+    photographer: '@_antonio_bellan',
   },
   {
     id: '6',
-    category: 'lifestyle',
+    category: 'collaboration',
     title: 'Veil & Form',
     description: 'Study of texture, movement, and negative space.',
     image: life3_image,
+    photographer: '@ph_milesi',
   },
 ]
 
 export const category_labels = {
   all: 'All',
-  lifestyle: 'Lifestyle',
+  collaboration: 'Collaboration',
   brand_shoots: 'Brand shoots',
 }

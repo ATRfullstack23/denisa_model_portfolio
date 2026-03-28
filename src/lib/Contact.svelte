@@ -23,15 +23,7 @@
     </header>
 
     <div class="contact_details">
-      <div class="detail_block">
-        <p class="detail_label">Email</p>
-        <a class="detail_link" href="mailto:denyssa.model@gmail.com">denyssa.model@gmail.com</a>
-      </div>
-      <div class="detail_block">
-        <p class="detail_label">Phone</p>
-        <a class="detail_link" href="tel:+33123456789">+33 1 23 45 67 89</a>
-      </div>
-      <ul class="social_inline">
+      <ul class="social_inline" style="margin-top: 0;">
         {#each social_links as s}
           <li>
             <a class="social_link" href={s.href} target="_blank" rel="noreferrer">

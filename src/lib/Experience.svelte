@@ -1,5 +1,10 @@
 <script>
-  const brands = ['Maison Lune', 'Velvet Atlas', 'Noir Studio', 'Aether Cosmetics', 'Linea Moda']
+  const brands = [
+    { name: 'Naked Underwear', url: 'https://www.instagram.com/naked.underwear?igsh=MXJnNDNuZGhtc2Fpdw==' },
+    { name: 'Rihoas', url: 'https://www.instagram.com/rihoas_official?igsh=Z2Y3aDB4dWcxdTFz' },
+    { name: 'Berlook', url: 'https://www.instagram.com/berlookofficial?igsh=MTFjdmhmM3Frd2U0Mw==' },
+    { name: 'Samiol', url: 'https://www.instagram.com/samiol.official?igsh=N3c2bGV0dHFlc3Rr' }
+  ]
 </script>
 
 <section id="experience" class="experience_section" aria-labelledby="experience_heading">
@@ -16,8 +21,12 @@
     <div class="brands_strip">
       <p class="brands_label">Brands &amp; partners</p>
       <ul class="brands_list">
-        {#each brands as name}
-          <li class="brand_chip">{name}</li>
+        {#each brands as brand}
+          <li>
+            <a href={brand.url} target="_blank" rel="noopener noreferrer" class="brand_chip">
+              {brand.name}
+            </a>
+          </li>
         {/each}
       </ul>
     </div>
@@ -86,11 +95,20 @@
   }
 
   .brand_chip {
+    display: inline-block;
     padding: 0.44rem 0.85rem;
     font-size: 0.74rem;
     border-radius: 999px;
     border: 1px solid var(--color-border);
     background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .brand_chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   @media (min-width: 768px) {
