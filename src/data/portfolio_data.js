@@ -23,6 +23,7 @@ export const portfolio_items = [
     title: 'Structural Elegance',
     description: 'Architectural lines and couture silhouettes for SS lookbook.',
     image: bs1_image,
+    photographer: '@ivanodp_photo',
   },
   {
     id: '3',
@@ -35,8 +36,8 @@ export const portfolio_items = [
   {
     id: '4',
     category: 'collaboration',
-    title: 'Campaign Noir',
-    description: 'Luxury fragrance campaign — cinematic black and white.',
+    title: 'Studio Noir',
+    description: 'Edgy black and white editorial — structured tailoring and striking pose.',
     image: bs2_image,
     photographer: '@_antonio_bellan',
   },
